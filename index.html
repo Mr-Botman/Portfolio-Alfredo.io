@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Roboto&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #f1f1f1;
+    }
+
+    .conteiner-all {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 55px 1fr 1fr 0.2fr 1fr 0.2fr;
+        height: 100vh;
+        grid-area: 0.9rem;
+        grid-template-areas:
+            "nav nav nav nav"
+            "welcome welcome welcome welcome"
+            "me me me me "
+            "title title title title"
+            "content content content content"
+            "footer footer footer footer "
+        ;
+    }
+
+    .nav-bar-top {
+        grid-area: nav;
+        background-color: black;
+    }
+
+    .nav-top {
+        position: fixed;
+        width: 100%;
+        height: 55px;
+        color: white;
+        background-color: black;
+    }
+
+    .nav-top {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .nav-top ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .lista-nav li {
+        display: inline-block;
+    }
+
+    .a-nav {
+        color: white;
+        border: white 1px solid;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 5px;
+        transition: all 150ms ease-in-out;
+    }
+
+    .a-nav:hover {
+        background-color: blanchedalmond;
+        color: black;
+    }
+
+    .welcome {
+        grid-area: welcome;
+        background-image: linear-gradient(to bottom right, rgba(51, 209, 194, 1), rgb(246, 245, 245));
+    }
+
+    .Welcome-sect {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .card-me {
+        grid-area: me;
+        background: #f1f1f1;
+    }
+
+    .card-me {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        margin: 50px;
+    }
+
+    .card-data {
+        border: 1px solid black;
+        border-radius: 0%;
+        background: #fff;
+        box-shadow: 5px 8px 8px 8px #888888;
+        color: #757575;
+    }
+
+    .education {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .personal-data ul {
+        text-align: start;
+    }
+
+    .card-abilities ul {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .personal-data {
+        text-align: center;
+    }
+
+    .align-text {
+        margin: 5px;
+    }
+
+    .exp {
+        margin: 10px;
+        text-align: justify;
+    }
+
+    .exp a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .h2-card {
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+        border: solid 1px;
+        background-color: rgba(51, 209, 194, 1);
+    }
+
+    h2 {
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+    }
+
+    p,
+    .abilities,
+    .career {
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .title {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .title-work {
+        background-color: rgba(192, 192, 192, 0.5);
+        text-align: center;
+    }
+
+    .title-work a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .title-work a:hover {
+        color: indianred;
+    }
+
+    .main {
+        grid-area: content;
+        background: #f1f1f1;
+    }
+
+    #projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+        margin: 50px;
+    }
+
+    .footer {
+        grid-area: footer;
+        background: silver;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: cornsilk;
+        font-size: larger;
+    }
+
+    .footer a:hover {
+        color: black;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titles-contact {
+        width: 80%;
+    }
+
+    .titles-contact {
+        width: 80%;
+        text-align: center;
+    }
+
+    .Contact-links {
+        width: 80%;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    @media only screen and (max-width:550px) {
+        .title-nav {
+            display: none;
+        }
+
+        .exp {
+            margin: 10px;
+            text-align: justify;
+        }
+
+        .nav-top {
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .Contact-links {
+            width: 80%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+</style>
+
+<body>
+    <div class="conteiner-all">
+        <div class="nav-bar-top">
+            <nav class="nav-top" id="navbar">
+                <h1 class="title-nav">Portfolio</h1>
+                <ul class="lista-nav">
+                    <li><a class="a-nav" href="#">Inicio</a></li>
+                    <li><a class="a-nav" href="#me">Acerca de mi</a></li>
+                    <li><a class="a-nav" href="#Projects-title">Trabajos</a></li>
+                    <li><a class="a-nav" href="#profile-link">Contactame</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="welcome">
+            <section class="Welcome-sect" id="welcome-section">
+                <div>
+                    <h1>Hola! Bienvenido a Mi Portafolio </h1><br>
+                </div>
+                <div>
+                    <p>Soy Alfredo, Un desarrollador Web ...</p>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="card-me" id="me">
+
+            <div class="card-data">
+                <div class="personal-data">
+                    <h2 class="h2-card"><i class="fas fa-id-card"></i> Sobre mi</h2>
+                    <div class="align-text">
+                        <p>Mi nombre es Alfredo Martínez Márquez </p>
+                        <p>Vivo en México</p>
+                        <p>Profesion:Web developer/Ing. biomédico</p>
+                        <p>Gustos por el desarrollo de software</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-data">
+                <div class="personal-data">
+                    <h2 class="h2-card"><i class="fas fa-tools"></i> Experiencia</h2>
+                    <div class="align-text exp">
+                        <p>Durante más de un año como proyecto final de ingeniería biomédica estuve desarrollando
+                            aplicaciones Web
+                            para la Gestión de Usuarios del sistema de información de radiología <a
+                                href="https://www.adsc.com/blog/what-is-a-radiology-information-system"
+                                target="_blank"><strong>(RIS)</strong></a>
+                            del
+                            <a href="https://www.inr.gob.mx/" target="_blank"><strong>instituto nacional
+                                    rehabilitación</strong></a>
+                            (INR).
+                            En este tiempo tuve el rol de desarrollador front-end y back-end, logrado habilidades y
+                            experiencia en distintos lenguajes de programación y gestión de proyecto.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-data">
+                <div class="personal-data education">
+                    <h2 class="h2-card"><i class="fas fa-user-graduate"></i> Educación</h2>
+                    <p>Formación académica</p>
+                    <ul>
+                        <li class="career">Licenciatura en ingeniería biomédica.Centro de estudios: Universidad Autónoma
+                            Metropolitana [2021]</li>
+                        <li class="career">Técnico en informática.Centro de estudios: Colegio de estudios científicos y
+                            tecnológicos del estado de México [2014]</li>
+                    </ul>
+                    <p>Otros</p>
+                    <ul>
+                        <li>Taller de adquisición de señales con Matlab,UAM-I [septiembre, 2018]</li>
+                        <li>Taller de instalaciones eléctricas y pruebas de seguridad eléctrica a equipos médicos. UAM-I
+                            [enero, 2019] </li>
+                        <li>Certificación: Estructuras de datos y algoritmos en JavaScript.FreeCodeCamp [octubre, 2021]
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-data">
+                <div class="personal-data card-abilities">
+                    <h2 class="h2-card"><i class="fas fa-laptop-code"></i> Habilidades</h2>
+                    <ul>
+                        <li class="abilities">Javascript</li>
+                        <li class="abilities">Java/Spring/MOO</li>
+                        <li class="abilities">HTML</li>
+                        <li class="abilities">CSS</li>
+                        <li class="abilities">Python</li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="title" id="Projects-title">
+            <h2>Algunos de los proyectos que he realizado</h2>
+        </div>
+        <div class="main">
+            <section id="projects">
+                <div class="card-work project-tile">
+                    <div class="title-work">
+                        <p><a href="https://codepen.io/Mr-Botman/full/xxLaVXO" target="_blank">Documentación Técnica</a>
+                        </p>
+                    </div>
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="Graph ecg signal with python"
+                        src="https://codepen.io/Mr-Botman/embed/xxLaVXO?default-tab=&theme-id=dark" frameborder="no"
+                        loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Mr-Botman/pen/xxLaVXO">
+                            Graph ecg signal with python</a> by Alfredo (<a
+                            href="https://codepen.io/Mr-Botman">@Mr-Botman</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+
+                </div>
+
+                <div class="card-work project-tile">
+                    <div class="title-work">
+                        <p><a href="https://codepen.io/Mr-Botman/full/rNzddXX" target="_blank">Formulario</a></p>
+                    </div>
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="COVID SURVEY"
+                        src="https://codepen.io/Mr-Botman/embed/rNzddXX?default-tab=&theme-id=dark" frameborder="no"
+                        loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Mr-Botman/pen/rNzddXX">
+                            COVID SURVEY</a> by Alfredo (<a href="https://codepen.io/Mr-Botman">@Mr-Botman</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                </div>
+                <div class="card-work project-tile">
+                    <div class="title-work">
+                        <p><a href="https://codepen.io/Mr-Botman/full/dyzeboe" target="_blank">Venta de Producto</a></p>
+                    </div>
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="Product Landing Page"
+                        src="https://codepen.io/Mr-Botman/embed/dyzeboe?default-tab=&theme-id=dark" frameborder="no"
+                        loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Mr-Botman/pen/dyzeboe">
+                            Product Landing Page</a> by Alfredo (<a href="https://codepen.io/Mr-Botman">@Mr-Botman</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                </div>
+                <div class="card-work">
+                    <div class="title-work project-tile">
+                        <p><a href="https://codepen.io/Mr-Botman/full/BadLxGa" target="_blank">Tributo</a></p>
+                    </div>
+                    <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled"
+                        src="https://codepen.io/Mr-Botman/embed/BadLxGa?default-tab=&theme-id=dark" frameborder="no"
+                        loading="lazy" allowtransparency="true" allowfullscreen="true">
+                        See the Pen <a href="https://codepen.io/Mr-Botman/pen/BadLxGa">
+                            Untitled</a> by Alfredo (<a href="https://codepen.io/Mr-Botman">@Mr-Botman</a>)
+                        on <a href="https://codepen.io">CodePen</a>.
+                    </iframe>
+
+                </div>
+            </section>
+        </div>
+        <div class="footer">
+            <div class="titles-contact">
+                <h2>Trabajemos juntos</h2>
+                <h3>Contactame por estos medios</h3>
+            </div>
+            <div class="Contact-links">
+                <a id="profile-link" href="https://github.com/Mr-Botman" target="_blank" class="btn contact-details"><i
+                        class="fab fa-github"></i> GitHub</a>
+
+                <a href="https://www.freecodecamp.org/fcc5cf92a0e-b68a-470c-bfbd-e10a9268b6fd" target="_blank"
+                    class="btn contact-details">
+                    <i class="fab fa-free-code-camp"></i> FreeCodeCamp</a>
+
+                <a href="https://codepen.io/Mr-Botman" target="_blank" class="btn contact-details">
+                    <i class="fab fa-codepen"></i> CodePen</a>
+
+
+                <a href="Micorreo" target="_blank" class="btn contact-details">
+                    <i class="fas fa-at"></i> Correo electronico</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
